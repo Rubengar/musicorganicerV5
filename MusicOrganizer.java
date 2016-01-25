@@ -170,4 +170,16 @@ public class MusicOrganizer
             addTrack(track);
         }
     }
+    /**
+     * Metodo que nos muestra la informacion del track que hemos buscado por el nombre
+     */
+    private void findInTitle(String nombre)
+    {
+         for(Track track : tracks) {
+            if(track.getTitle().contains(nombre)) {
+                System.out.println(track.getDetails());
+            }
+        }
+    
+    }
 }
