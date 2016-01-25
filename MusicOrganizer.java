@@ -15,6 +15,8 @@ public class MusicOrganizer
     private MusicPlayer player;
     // A reader that can read music files and load them as tracks.
     private TrackReader reader;
+    
+    private boolean encendido;
 
     /**
      * Create a MusicOrganizer
@@ -24,6 +26,7 @@ public class MusicOrganizer
         tracks = new ArrayList<Track>();
         player = new MusicPlayer();
         reader = new TrackReader();
+        encendido = false;
         readLibrary("audio");
         System.out.println("Music library loaded. " + getNumberOfTracks() + " tracks.");
         System.out.println();
@@ -58,6 +61,7 @@ public class MusicOrganizer
             player.startPlaying(track.getFilename());
             System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());
             track.sumCount();
+            encendido = true;
         }
     }
     
@@ -137,6 +141,7 @@ public class MusicOrganizer
     public void stopPlaying()
     {
         player.stop();
+        encendido = true;
     }
 
     /**
@@ -189,9 +194,25 @@ public class MusicOrganizer
         }
     
     }
+    /**
+     * Metodo que permite cambiar el año de la cancion
+     */
     public void cambiarYear(Track cancion, int nuevoYear)
     {
         cancion.changeYear(nuevoYear);
+    }
+    public void isPlaying()
+    {
+        if(encendido == true)
+        {
+             System.out.println("Esta en reproduccion");
+        }
+        else
+        {
+             System.out.println(" no hay nada reproduciendose");
+             
+        }
+ 
     }
     
 }
