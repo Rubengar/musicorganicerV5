@@ -196,10 +196,19 @@ public class MusicOrganizer
     /**
      * Metodo que permite cambiar el año de la cancion
      */
-    public void cambiarYear(Track cancion, int nuevoYear)
+    public void cambiarYear(String nombre, int nuevoYear)
     {
-        cancion.changeYear(nuevoYear);
+        for(Track track : tracks) 
+         {
+            if(track.getTitle().contains(nombre)) 
+            {
+                track.changeYear(nuevoYear);
+            }
+        }
     }
+    /**
+     * Muestra si se esta reproduciendo algo o no
+     */
     public void isPlaying()
     {
         if(encendido == true)
