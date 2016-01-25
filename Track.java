@@ -13,8 +13,10 @@ public class Track
     private String title;
     // Where the track is stored.
     private String filename;
-    // 
+    //Contador
     private int playCount;
+    //guarda el año de la cancion
+    private int year;
     
     /**
      * Constructor for objects of class Track.
@@ -22,9 +24,9 @@ public class Track
      * @param title The track's title.
      * @param filename The track file. 
      */
-    public Track(String artist, String title, String filename)
+    public Track(String artist, String title, String filename, int año)
     {
-        setDetails(artist, title, filename);
+        setDetails(artist, title, filename, year);
         playCount = 0;
     }
     
@@ -36,7 +38,7 @@ public class Track
      */
     public Track(String filename)
     {
-        setDetails("unknown", "unknown", filename);
+        setDetails("unknown", "unknown", filename,0);
     }
     
     /**
@@ -65,6 +67,14 @@ public class Track
     {
         return filename;
     }
+    public int getYear()
+    {
+        return year;
+    }
+    public void changeYear(int nuevoYear)
+    {
+        year = nuevoYear;
+    }
         
     /**
      * Return details of the track: artist, title and file name.
@@ -72,7 +82,7 @@ public class Track
      */
     public String getDetails()
     {
-        return artist + ": " + title + "  (file: " + filename + ")";
+        return artist + ": " + title + "  (file: " + filename + ")"+ year;
     }
     
     /**
@@ -81,11 +91,12 @@ public class Track
      * @param title The track's title.
      * @param filename The track file. 
      */
-    private void setDetails(String artist, String title, String filename)
+    private void setDetails(String artist, String title, String filename, int year )
     {
         this.artist = artist;
         this.title = title;
         this.filename = filename;
+        this.year = year;
     }
     /**
      * Metodo que resetea el contador

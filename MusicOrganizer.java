@@ -179,13 +179,19 @@ public class MusicOrganizer
      */
     private void findInTitle(String nombre)
     {
-         for(Track track : tracks) {
-            if(track.getTitle().contains(nombre)) {
+         for(Track track : tracks) 
+         {
+            if(track.getTitle().contains(nombre)) 
+            {
                 System.out.println(track.getDetails());
                 System.out.println(track.getPlayCount());
             }
         }
     
+    }
+    public void cambiarYear(Track cancion, int nuevoYear)
+    {
+        cancion.changeYear(nuevoYear);
     }
     
 }

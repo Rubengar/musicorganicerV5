@@ -69,6 +69,8 @@ public class TrackReader
         String artist = "unknown";
         String title = "unknown";
         String filename = file.getPath();
+        int año = 0;
+        
         
         // Look for artist and title in the name of the file.
         String details = file.getName();
@@ -86,6 +88,6 @@ public class TrackReader
                 title = titlePart;
             }
         }
-        return new Track(artist, title, filename);
+        return new Track(artist, title, filename,año);
     }
 }
