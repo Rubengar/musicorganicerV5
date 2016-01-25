@@ -57,6 +57,7 @@ public class MusicOrganizer
             Track track = tracks.get(index);
             player.startPlaying(track.getFilename());
             System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());
+            track.sumCount();
         }
     }
     
@@ -78,6 +79,7 @@ public class MusicOrganizer
         System.out.print("Track " + index + ": ");
         Track track = tracks.get(index);
         System.out.println(track.getDetails());
+        System.out.println(track.getPlayCount());
     }
     
     /**
@@ -89,6 +91,7 @@ public class MusicOrganizer
 
         for(Track track : tracks) {
             System.out.println(track.getDetails());
+            System.out.println(track.getPlayCount());
         }
         System.out.println();
     }
@@ -102,6 +105,7 @@ public class MusicOrganizer
         for(Track track : tracks) {
             if(track.getArtist().contains(artist)) {
                 System.out.println(track.getDetails());
+                System.out.println(track.getPlayCount());
             }
         }
     }
@@ -178,8 +182,10 @@ public class MusicOrganizer
          for(Track track : tracks) {
             if(track.getTitle().contains(nombre)) {
                 System.out.println(track.getDetails());
+                System.out.println(track.getPlayCount());
             }
         }
     
     }
+    
 }
