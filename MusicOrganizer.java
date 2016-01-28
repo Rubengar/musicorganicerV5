@@ -235,14 +235,14 @@ public class MusicOrganizer
         }
     }
     /**
-     * 
+     * Metodo que permite eliminar una cancion dando el nombre del artista
      */
-    public void removeByArtist(String nombre)
+    public void removeByArtist(String nombreArtista)
     {
         Iterator<Track> lista = tracks.iterator();
         while(lista.hasNext())
         {
-             if(lista.next().getArtist().contains(nombre)) 
+             if(lista.next().getArtist().contains(nombreArtista)) 
             {
                 lista.remove();
 
@@ -250,6 +250,21 @@ public class MusicOrganizer
         }
     
     }
+    /**
+     * Metodo que permite eliminar una cancion dando el titulo
+     */
+    public void removeByTitle(String titulo)
+    {
+        Iterator<Track> lista = tracks.iterator();
+        while(lista.hasNext())
+        {
+             if(lista.next().getTitle().contains(titulo)) 
+            {
+                lista.remove();
+
+            }
+        }
     
+    }
     
 }
